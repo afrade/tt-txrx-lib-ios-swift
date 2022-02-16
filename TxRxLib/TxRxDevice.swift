@@ -25,12 +25,13 @@ import UIKit
 import CoreBluetooth
 
 /// Implements an instance of Tertium BLE device
+@objc(TxRxDevice)
 public class TxRxDevice: NSObject {
     /// This device's delegate. Delegate will receive data exchange information specified in TxRxDeviceDataProtocol
     public var delegate: TxRxDeviceDataProtocol? = nil
     
     /// This device's name. When a device doesn't supply a name "Unnamed device" will be used
-    public internal(set) var name: String = "Unnamed device"
+    @objc public internal(set) var name: String = "Unnamed device"
     
     /// This device's indexed name. When a device doesn't supply a name "Unnamed device_index" will be used
     public internal(set) var indexedName: String = "Unnamed device"
@@ -54,7 +55,7 @@ public class TxRxDevice: NSObject {
     public internal(set) var deviceProfile: TxRxDeviceProfile? = nil
     
     /// If the device is connected
-    public internal(set) var isConnected = false
+    @objc public internal(set) var isConnected = false
     
     /// If device is sending data (a sendData has been issued)
     public internal(set) var sendingData = false;
